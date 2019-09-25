@@ -138,6 +138,7 @@ generating the plot using summarize data
 plot(steps_interval$interval,steps_interval$Steps , type="l", col="red" , lwd=2 , xlab = "Interval" , ylab = "Avg. Steps")
 ```
 
+![alt text](plot4.png)
 
 ### Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -179,7 +180,9 @@ Generating the graph by group by the date
 dt_filled%>%group_by(date) %>% summarise(steps = sum(steps,na.rm = T))
 p <- ggplot(Total_Steps, aes(x=DailySteps)) +   geom_histogram( fill="gray",binwidth = 1000 ) + labs(title = "Daily Steps" , x = "Steps" , y = "Count" )
 print(p)
-```
+
+
+![alt text](plot2.png)```
 
 Do these values differ from the estimates from the first part of the assignment? yes and different as bellow
 
@@ -213,3 +216,5 @@ table(dt_fact$factwk)
 dt_graph <- aggregate(steps ~ interval + factwk , dt_fact , FUN = "mean")
 xyplot(steps ~ interval | factwk , data=dt_graph, type="l", grid=T, layout=c(1,2), ylab="Number of steps", xlab="5-min. intervals from midnight", main="Average  5-min. activity intervals: Weekdays vs. Weekends")
 ```
+
+![alt text](plot3.png)
