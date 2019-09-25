@@ -107,6 +107,8 @@ p <- ggplot(Total_Steps, aes(x=DailySteps)) +   geom_histogram( fill="blue",binw
 print(p)
 ```
 
+![alt text](plot1.png)
+
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
 
 Calculate the Mean
